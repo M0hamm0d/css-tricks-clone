@@ -44,14 +44,15 @@ header .logo a{
     flex-direction: row;
     align-items: center;
 }
-header svg{
+header img{
     fill: white;
     filter: drop-shadow(0 2px 5px rgba(0,0,0,.3));
 }
-header .icon-logo-star{
-    height: 18px;
-    width: 18px;
+.logo .icon-logo-star{
+    height: 25px;
+    width: 25px;
     margin: 0 7px 0 0;
+    fill: #fff;
     animation: spin 1s forwards;
 }
 header .icon-logo-text{
@@ -275,16 +276,9 @@ header .header-nav-area div .search-filter{
     justify-content: space-between;
     width: 100%;
 }
-.search-result-primary-inner .KK{
-    display: flex;
-    justify-content: space-between;
-}
 li .result-list-inner{
     display: flex;
     flex-direction: column;
-}
-.result-list{
-    display: flex;
 }
 .result-list-inner h3{
     line-height: 1.35;
@@ -437,7 +431,7 @@ main a img{
 main a img{
     max-width: 100%;
 }
-main .page-title h1{
+.page-title{
     font-size: 51.2px; 
     margin: 0px 0px 31.04px;
 
@@ -455,10 +449,13 @@ main .articles-and-sidebar{
 }
 .article-grid article{
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .article-grid article .video-thumbnail{
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    height: 100%;
 }
 .article-grid article a:hover{
     opacity: .66;
@@ -467,6 +464,8 @@ main .articles-and-sidebar{
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 article img{
     width: 100%;
@@ -496,21 +495,22 @@ article div{
     color: #0089c7;
     text-decoration: none;
 }
+.guide-excerpt span{
+    text-decoration: line-through;
+}
 .video-info .button{
     display: flex;
     justify-content: center;
     background-color: #5e5e5e;
     border-radius: 4px;
     margin-top: auto;
-}
-.video-info .button:hover{
-    opacity: .66;
-}
-.video-info .button a{
     padding: 1rem 1.5rem;
     text-decoration: none;
     color: #fff;
     font-weight: 700;
+}
+.video-info .button:hover{
+    opacity: .66;
 }
 .breadcrumbs div{
     width: 100%;
@@ -585,6 +585,8 @@ article div{
 .article-grid .video-card{
     background-color: #fff;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 .video-card a:hover{
     opacity: .66;
@@ -945,7 +947,7 @@ footer .footer-popup{
     main .site-note{
         flex-direction: column;
     }
-    main .page-title h1{
+    .page-title{
         font-size: 20.4px;
     }
     main .articles-and-sidebar{
