@@ -1,9 +1,3 @@
-.wrapper{
-    z-index: 10;
-}
-main{
-    padding: 0rem 3rem;
-}
 main .site-note{
     display: flex;
     flex-direction: row;
@@ -40,11 +34,6 @@ main a img{
     font-size: 51.2px; 
     margin: 0px 0px 31.04px;
 
-}
-main .articles-and-sidebar{
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 300px;
-    gap: 3rem;
 }
 .articles-and-sidebar .article-grid{
     display: grid;
@@ -113,6 +102,8 @@ article div{
     text-decoration: none;
     color: #fff;
     font-weight: 700;
+    box-shadow: inset 1px 1px 0 #777, 0 2px 3px rgba(0,0,0,.4);
+    line-height: 1.4;
 }
 .video-info .button:hover{
     opacity: .66;
@@ -149,38 +140,6 @@ article div{
     margin-left: 1rem;
     width: 18px;
 }
-.sidebar-container{
-    display: flex;
-}
-.sidebar .adverts{
-    padding: .5rem;
-    margin: 0 0 3rem;
-    z-index: 1;
-    background-color: #fff;
-    border-radius: 8px;
-}
-.adverts .interlude{
-    padding: 1rem;
-}
-.adverts .interlude:hover{
-    opacity: .66;
-}
-.adverts .interlude a{
-    color: #434343;
-    text-decoration: none;
-    font-size: 12px;
-}
-.adverts .module img{
-    width: 100%;
-    height: auto;
-    transition: transform .15s;
-    overflow: hidden;
-}
-.adverts .module img:hover{
-    transform: translate(-.1rem, -.5rem ) rotate(-2deg);
-    z-index: 999;
-    opacity: .7;
-}
 .article-grid{
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
@@ -210,12 +169,10 @@ article div{
     color: black;
     text-decoration: none;
 }
- .video-card.button{
-    display: flex;
+ .video-card .button{
     justify-content: center;
     background-color: #5e5e5e;
     border-radius: 4px;
-
 }
 .video-card .button:hover{
     opacity: .66;
@@ -238,46 +195,22 @@ article div{
         overflow-x: scroll;
         text-wrap: nowrap;
     }
-    main{
-        padding: 1em;
-    }
     main .site-note{
         flex-direction: column;
     }
     .page-title{
         font-size: 20.4px;
     }
-    main .articles-and-sidebar{
-        gap: 0px;
-    }
     .articles-and-sidebar .article-grid{
         gap: 1rem;
     }
-    .sidebar-container{
-        display: none;
-    }
-    .video-info .button a{
-        width: max-content;
+    .video-info .button {
+        font-size: 13.6px;
     }
     .breadcrumbs div ul{
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: start;
         margin: 0;
-    }
-    footer{
-        padding: 20px 1rem 2rem;
-    }
-    footer .icon-logo-star{
-        top: -115px;
-    }
-    footer .footer-message-and-link{
-        grid-template-columns: 1fr;
-    }
-    footer .link-grid{
-        grid-template-columns: 1fr;
-    }
-    .footer-message-and-link .desktop-view{
-        display: none;
     }
 }

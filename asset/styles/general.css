@@ -15,7 +15,6 @@ html{
     background-image: radial-gradient(50% 50% at top center, rgba(0, 0, 0, .66),#262626), var(--featured-img);
     background-size: 120% 2000px 100% 2000px;
     line-height: 1.7;
-    z-index: 100;
     scrollbar-color:  #666 #201c29;
 }  
 @keyframes spin {
@@ -396,6 +395,46 @@ li .result-list-inner{
     text-decoration-color: #1689db;
 } 
 /* header ends */
+main{
+    padding: 0rem 3rem;
+}
+main .articles-and-sidebar{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 3rem;
+}
+.sidebar-container{
+    display: flex;
+}
+.sidebar .adverts{
+    padding: .5rem;
+    margin: 0 0 3rem;
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 8px;
+}
+.adverts .interlude{
+    padding: 1rem;
+}
+.adverts .interlude a{
+    color: #434343;
+    text-decoration: none;
+    font-size: 12px;
+}
+.adverts .interlude:hover{
+    opacity: .66;
+}
+.adverts .module img{
+    width: 100%;
+    height: auto;
+    transition: transform .15s;
+    overflow: hidden;
+}
+.adverts .module img:hover{
+    transform: translate(-.1rem, -.5rem ) rotate(-2deg);
+    z-index: 999;
+    opacity: .7;
+}
 /* footer start */
 footer{
     background-color: #111;
@@ -706,3 +745,68 @@ footer .footer-popup{
     display: flex;
 }
 /* footer end */
+@media (min-width: 300px) and (max-width: 799px){
+    .header-nav-area .search-logo .search{
+        padding: 0px;
+    }
+    .search-dropdown{
+        max-width: 100%;
+    }
+    .search-result-content{
+        flex-direction: column;
+    }
+    .search-result-content .search-result-secondary{
+        display: none;
+    }
+    .search-dropdown-inner .search-control{
+        margin-left: 20px;
+        margin-right: 20px;
+        left: 0;
+        right: 0;
+    }
+    .search-result-primary {
+        flex-direction: row;
+        max-width: 100%;
+    }
+    .search-result-primary .search-result-primary-inner h2 {
+        padding: 0;
+        margin: 50px 20px 16px;
+    }
+    .search-result-primary .search-result-primary-inner ol{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .search-result-primary-inner ol li .result-list{
+        flex-direction: column;
+    }
+    main {
+        padding: 1em;
+    }
+    main .articles-and-sidebar{
+        gap: 0rem;
+    }
+    .sidebar-container{
+        display: none;
+    }
+    footer{
+        padding: 20px 1rem 2rem;
+    }
+    footer .icon-logo-star{
+        top: -115px;
+    }
+    footer .footer-message-and-link{
+        grid-template-columns: 1fr;
+    }
+    footer .link-grid{
+        grid-template-columns: 1fr;
+    }
+    .footer-message-and-link .desktop-view{
+        display: none;
+    }
+}
+@media (max-width: 800px){
+    main .articles-and-sidebar {
+        display: block;
+        padding-top: 0;
+    }
+}

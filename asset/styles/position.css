@@ -1,9 +1,3 @@
-.wrapper{
-    z-index: 10;
-}
-main{
-    padding: 0rem 1rem;
-}
 .header-breadcrumbs{
     display: flex;
     flex-direction: column;
@@ -67,27 +61,19 @@ main{
     opacity: .66;
     text-decoration: underline;
 }
-main{
-    padding: 0rem 3rem;
-}
-main .page-wrap{
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 300px;
-    gap: 3rem;
-}
-.article-grid .article-sponsor{
+.article-grid .site-note{
     background-color: rgba(0,0,0,0.2);
     padding: 1rem 1.5rem;
     border-radius: 8px;
 }
-.article-sponsor a{
+.site-note a{
     text-decoration: none;
     color: #fff;
     font-weight: 700;
     position: relative;
     padding-bottom: 6px;
 }
-.article-sponsor a::after{
+.site-note a::after, .article-sponsor a::after{
     content: "";
     background: linear-gradient(130deg, #ff7a18,#af002d 41.07%,#319197 76.05%);
     display: block;
@@ -98,10 +84,10 @@ main .page-wrap{
     height: 5px;
     border-radius: 8px;
 }
-.article-sponsor a:hover{
+.article-sponsor a:hover,.site-note a:hover{
     color: #b7b7b7;
 }
-.article-sponsor a:focus::after,.article-sponsor a:hover::after {
+.site-note a:hover::after,.article-sponsor a:hover::after {
     background: #b7b7b7;
 }
 .article-grid .article-content{
@@ -170,38 +156,6 @@ main .page-wrap{
     height: 5px;
     border-radius: 8px;
 }
-.sidebar-container{
-    display: flex;
-}
-.sidebar .adverts{
-    padding: .5rem;
-    margin: 0 0 3rem;
-    z-index: 1;
-    background-color: #fff;
-    border-radius: 8px;
-}
-.adverts .interlude{
-    padding: 1rem;
-}
-.adverts .interlude a{
-    color: #434343;
-    text-decoration: none;
-    font-size: 12px;
-}
-.adverts .interlude:hover{
-    opacity: .66;
-}
-.adverts .module img{
-    width: 100%;
-    height: auto;
-    transition: transform .15s;
-    overflow: hidden;
-}
-.adverts .module img:hover{
-    transform: translate(-.1rem, -.5rem ) rotate(-2deg);
-    z-index: 999;
-    opacity: .7;
-}
 main .comment-section{
     position: relative;
     padding: 2rem;
@@ -237,9 +191,6 @@ main .comment-section p a{
         overflow-x: scroll;
         text-wrap: nowrap;
     }
-    main{
-        padding: 0rem 1rem;
-    }
     .article-grid .article-content{
         padding: 1.66rem;
     }
@@ -247,25 +198,7 @@ main .comment-section p a{
         display: block;
         padding-top: 0;
     }
-    .sidebar-container{
-        display: none;
-    }
     .page-wrap-inner .note{
         padding: calc(1rem + 8px) 1rem 1rem;
-    }
-    footer{
-        padding: 20px 1rem 2rem;
-    }
-    footer .icon-logo-star{
-        top: -115px;
-    }
-    footer .footer-message-and-link{
-        grid-template-columns: 1fr;
-    }
-    footer .link-grid{
-        grid-template-columns: 1fr;
-    }
-    .footer-message-and-link .desktop-view{
-        display: none;
     }
 }

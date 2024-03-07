@@ -1,6 +1,3 @@
-main{
-    padding: 0rem 3rem;
-}
 main .site-note{
     display: flex;
     flex-direction: row;
@@ -231,13 +228,7 @@ main a img{
     width: 5px;
     box-shadow: -10px 0 20px 3px #000;
 }
-main .article-and-sidebar{
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 300px;
-    gap: 3rem;
-    margin-top: 3rem;
-}
-.article-and-sidebar .article-grid{
+.articles-and-sidebar .article-grid{
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
     gap: 3rem;
@@ -346,11 +337,11 @@ article img:hover{
     text-decoration: none;
 }
 /* mm */
-.passkey .ULL,.article-article ul{
+.article-article ul{
     list-style: none;
     margin: 0 0 .5rem;
 }
-.ULL,.article-article ul li{
+.article-article ul li{
     display: inline;
     margin-right: 10.138px;
     line-height: 1;
@@ -375,38 +366,6 @@ article img:hover{
     border-radius: 50%;
 }
 /* mm */
-.sidebar-container{
-    display: flex;
-}
-.sidebar .adverts{
-    padding: .5rem;
-    margin: 0 0 3rem;
-    z-index: 1;
-    background-color: #fff;
-    border-radius: 8px;
-}
-.adverts .interlude{
-    padding: 1rem;
-}
-.adverts .interlude:hover{
-    opacity: .66;
-}
-.adverts .interlude a{
-    color: #434343;
-    text-decoration: none;
-    font-size: 12px;
-}
-.adverts .module img{
-    width: 100%;
-    height: auto;
-    transition: transform .15s;
-    overflow: hidden;
-}
-.adverts .module img:hover{
-    transform: translate(-.1rem, -.5rem ) rotate(-2deg);
-    z-index: 999;
-    opacity: .7;
-}
 .archives{
     background: #676767;
     padding: 1rem 1.5rem;
@@ -422,23 +381,14 @@ article img:hover{
         overflow-x: scroll;
         text-wrap: nowrap;
     }
-    main{
-        padding: 1em;
-    }
     main .site-note{
         flex-direction: column;
     }
     main .page-title h1{
         font-size: 20.4px;
     }
-    main .articles-and-sidebar{
-        gap: 0px;
-    }
     .articles-and-sidebar .article-grid{
         gap: 1rem;
-    }
-    .sidebar-container{
-        display: none;
     }
     .article-card .article-article{
         padding: 1.5rem;
@@ -467,27 +417,9 @@ article img:hover{
     }
     .popular-header{
         flex: 0 0 175px;
-    }
-    main .article-and-sidebar {
-        display: block;
-    }
+    } 
     .archives h3{
         font-size: 14px;
         white-space: nowrap;
-    }
-    footer{
-        padding: 20px 1rem 2rem;
-    }
-    footer .icon-logo-star{
-        top: -115px;
-    }
-    footer .footer-message-and-link{
-        grid-template-columns: 1fr;
-    }
-    footer .link-grid{
-        grid-template-columns: 1fr;
-    }
-    .footer-message-and-link .desktop-view{
-        display: none;
     }
 }
