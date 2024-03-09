@@ -1,0 +1,204 @@
+.header-breadcrumbs{
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 2rem;
+}
+.header-breadcrumbs .tag{
+    display: flex;
+    margin: 0 0 .5rem;
+    line-height: 1
+}
+.tag a{
+    color: #ffdfd7;
+    font-size: .66rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-right: .66rem;
+}
+.tag a:hover{
+    opacity: .66;
+}
+.header-breadcrumbs .breadcrumbs{
+    display: inline-flex;
+}
+.header-breadcrumbs .breadcrumbs a{
+    color: #ffdfd7;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline;
+}
+.breadcrumbs:hover{
+    opacity: .66;
+}
+.header-breadcrumbs .page-title{
+    font-size: 40.8px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+.header-breadcrumbs .author-row{
+    display: flex;
+    align-items: center;
+    margin-top: .5rem;
+}
+.author-row div img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: .5rem;
+}
+.author-row div img:hover{
+    opacity: .66;
+}
+.author-row:last-child{
+    font-size: 13.6px;
+}
+.author-row .author-name {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+.author-row .author-name:hover{
+    opacity: .66;
+    text-decoration: underline;
+}
+.article-grid .site-note{
+    background-color: rgba(0,0,0,0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+}
+.site-note a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 6px;
+}
+.site-note a::after, .article-sponsor a::after{
+    content: "";
+    background: linear-gradient(130deg, #ff7a18,#af002d 41.07%,#319197 76.05%);
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-radius: 8px;
+}
+.article-sponsor a:hover,.site-note a:hover{
+    color: #b7b7b7;
+}
+.site-note a:hover::after,.article-sponsor a:hover::after {
+    background: #b7b7b7;
+}
+.article-grid .article-content{
+    padding: 4rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+.article-content .article-content-video iframe{
+    border-radius: 8px;
+    width: 100%;
+    height: 370px;
+}
+.article-content ul {
+    color: #000000;
+    line-height: 1.6;
+    max-width: 700px;
+}
+.article-content ul{
+    margin: 0 0 1.5rem 1.5rem;
+}
+.article-content ul li{
+    margin: 0 0 5px;
+    font-size: 19px;
+}
+.article-content ul li span{
+    font-weight: 700;
+    font-size: 19px;
+}
+.article-content ul li::marker{
+    color: #ff7a18;
+}
+.article-content p{
+    font-size: 19px;
+    margin: 0 0 1.5rem;
+}
+.article-content p a{
+    color: #0089c7;
+}
+.article-content p a:hover{
+    opacity: .7;
+}
+.page-wrap-inner .note{
+    background-color: rgba(0,0,0,0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+}
+.page-wrap-inner .note a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    padding-bottom: 6px;
+    position: relative;
+    padding-right: 5px;
+}
+.note a:hover{
+    color: #b7b7b7;
+}
+.note a::after{
+    content: "";
+    background: linear-gradient(130deg, #ff7a18,#af002d 41.07%,#319197 76.05%);
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-radius: 8px;
+}
+main .comment-section{
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+    background-color: #000000;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+main .comment-section::before{
+    content: "";
+    background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    z-index: -1;
+    border-radius: 12px;
+}
+main .comment-section p a{
+    text-decoration: none;
+    color: #0089c7;
+}
+.comment-section p a:hover{
+    opacity: .66;
+}
+@media (min-width:300px) and (max-width:800px) {
+    header{
+        padding: 15px 20px 0px;
+        margin: 0 0 1rem;
+    }
+    header .header-nav-area nav ul {
+        overflow-x: scroll;
+        text-wrap: nowrap;
+    }
+    .article-grid .article-content{
+        padding: 1.66rem;
+    }
+    main .page-wrap {
+        display: block;
+        padding-top: 0;
+    }
+    .page-wrap-inner .note{
+        padding: calc(1rem + 8px) 1rem 1rem;
+    }
+}
