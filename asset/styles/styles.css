@@ -17,9 +17,6 @@ main .site-note{
     color: #0089c7;
     text-decoration: none;
 }
-.site-note a:hover{
-    opacity: .66;
-}
 main a img{
     max-width: 100%;
 }
@@ -50,9 +47,6 @@ main a img{
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     height: 100%;
-}
-.article-grid article a:hover{
-    opacity: .66;
 }
 .article-grid .video-info{
     padding: 1.5rem;
@@ -105,9 +99,6 @@ article div{
     box-shadow: inset 1px 1px 0 #777, 0 2px 3px rgba(0,0,0,.4);
     line-height: 1.4;
 }
-.video-info .button:hover{
-    opacity: .66;
-}
 .breadcrumbs div{
     width: 100%;
     padding-right: 1rem;
@@ -152,9 +143,6 @@ article div{
     display: flex;
     flex-direction: column;
 }
-.video-card a:hover{
-    opacity: .66;
-}
 .article-grid .video-thumb img{
      width: 100%;
      height: auto;
@@ -174,17 +162,11 @@ article div{
     background-color: #5e5e5e;
     border-radius: 4px;
 }
-.video-card .button:hover{
-    opacity: .66;
-}
 .button a{
     padding: 1rem 1.5rem;
     text-decoration: none;
     color: #fff;
     font-weight: 700;
-}
-.button a:hover{
-    opacity: 1;
 }
 @media (min-width:300px) and (max-width:799px){
     header{
