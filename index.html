@@ -30,12 +30,17 @@
             </nav>
             <div class="search-logo">
                 <input type="checkbox" name="" id="Search">
-                <label class="" for="Search">
+                <button onclick="displaySearchModal()" class="">
                     <div class="search-filter">
                         <img src="asset/images/svg/svg/search-icon.svg" alt="">
                     </div>
-                </label>
-                <div class="search">
+                </button>
+                <!-- <label onclick="" class="" for="Search">
+                    <div class="search-filter">
+                        <img src="asset/images/svg/svg/search-icon.svg" alt="">
+                    </div>
+                </label> -->
+                <div id="search"  class="search">
                     <div class="search-dropdown">
                         <div class="search-dropdown-inner">
                             <div class="search-for-topics">
@@ -47,9 +52,12 @@
                                         <input type="search" placeholder="search...">
                                     </div>
                                 </form>
-                                <label for="Search">
+                                <button class="close-button" onclick="closeSearchModal()">
                                     <img src="asset/images/svg/svg/close-search-result.svg" alt="">
-                                </label>
+                                </button>
+                                <!-- <label for="Search">
+                                    <img src="asset/images/svg/svg/close-search-result.svg" alt="">
+                                </label> -->
                             </div>
                             <div class="search-control">
                                 <div class="">
@@ -64,300 +72,10 @@
                                 <div class="search-result-primary">
                                     <div class="search-result-primary-inner">
                                         <h2>Show popular results</h2>
-                                        <ol>
-                                            <li>
-                                                <div class="result-list">
-                                                    <div class="result-list-inner">
-                                                        <h3>
-                                                            <a href="#" class="">
-                                                                Content & and Display patterns with Expressive CSS
-                                                            </a>
-                                                        </h3>
-                                                        <div class="">
-                                                            <a href="">
-                                                                content-display-patterns-expressive-css
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="result-list">
-                                                    <div class="result-list-inner">
-                                                        <h3>
-                                                            <a href="#" class="">
-                                                                More code review tools (on Github)
-                                                            </a>
-                                                        </h3>
-                                                        <div class="">
-                                                            <a href="">
-                                                                code-review-tools
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="result-list">
-                                                    <div class="result-list-inner">
-                                                        <h3>
-                                                            <a href="#" class="">
-                                                                Resolution Independent Pixel Illustration
-                                                            </a>
-                                                        </h3>
-                                                        <div class="">
-                                                            <a href="">
-                                                                resolution-independent-pixel-illustration
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="result-list">
-                                                    <div class="result-list-inner">
-                                                        <h3>
-                                                            <a href="#" class="">
-                                                                What's the deal with declaring font properties on @font-face
-                                                            </a>
-                                                        </h3>
-                                                        <div class="">
-                                                            <a href="">
-                                                                what's-deal-declaring-font-properties-font-face
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="" class="">
-                                                        <img class="" src="asset/images/svg/images/font-face-usage.png" style="width: 128px;height: 128px;">
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="result-list">
-                                                    <div class="result-list-inner">
-                                                        <h3>
-                                                            <a href="#" class="">
-                                                                #147:Starting a React-Powered Comment Form
-                                                            </a>
-                                                        </h3>
-                                                        <div class="">
-                                                            <a href="">
-                                                                video-screencast > 147-starting-react-powered-comment-form
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="result-list">
-                                                    <div class="result-list-inner">
-                                                        <h3>
-                                                            <a href="#" class="">
-                                                                Comic Book FX Lettering with SVG Filters
-                                                            </a>
-                                                        </h3>
-                                                        <div class="">
-                                                            <a href="">
-                                                                comic-book-fx-lettering-svg-filters
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="result-list">
-                                                    <div class="result-list-inner">
-                                                        <h3>
-                                                            <a href="#" class="">
-                                                                So You'd Like To Translate a CSS-Tricks Article
-                                                            </a>
-                                                        </h3>
-                                                        <div class="">
-                                                            <a href="">
-                                                                translate-an-article
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="result-list">
-                                                    <div class="result-list-inner ">
-                                                        <h3>
-                                                            <a href="#" class="">
-                                                                Accessible, Simple,Responsive Table
-                                                            </a>
-                                                        </h3>
-                                                        <div class="">
-                                                            <a href="">
-                                                                accessible-simple-responsive-table
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <a href="" class="">
-                                                        <img class="" src="asset/images/svg/images/comparison-tables.jpg" style="width: 128px;height: 128px;">
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="result-list">
-                                                    <div class="result-list-inner">
-                                                        <h3>
-                                                            <a href="#" class="">
-                                                                Leveling Up With ReactContainer Components
-                                                            </a>
-                                                        </h3>
-                                                        <div class="">
-                                                            <a href="">
-                                                                learning-react-container-components
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="result-list">
-                                                    <div class="result-list-inner">
-                                                        <h3>
-                                                            <a href="#" class="anchor">
-                                                                Progressive Web Apps: The Long Game
-                                                            </a>
-                                                        </h3>
-                                                        <div class="">
-                                                            <a href="">
-                                                                progressive-web-apps-long-game
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="result-list">
-                                                    <div class="result-list-inner">
-                                                        <h3>
-                                                            <a href="#" class="">
-                                                                <span> Using Web Fonts at All:Point/Counterpoint</span>
-                                                            </a>
-                                                        </h3>
-                                                        <div class="">
-                                                            <a href="">
-                                                                content-display-patterns-expressive-css
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                        <ol class="list-container">
                                             <div class="load-more-section">
                                                 <input type="checkbox" id="load-more">
                                                 <div class="result-list-container">
-                                                    <li class="">
-                                                        <div class="result-list">
-                                                            <div class="result-list-inner">
-                                                                <h3>
-                                                                    <a href="#" class="">
-                                                                        Content & and Display patterns with Expressive CSS
-                                                                    </a>
-                                                                </h3>
-                                                                <div class="">
-                                                                    <a href="">
-                                                                        content-display-patterns-expressive-css
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="">
-                                                        <div class="result-list">
-                                                            <div class="result-list-inner">
-                                                                <h3>
-                                                                    <a href="#" class="">
-                                                                        Content & and Display patterns with Expressive CSS
-                                                                    </a>
-                                                                </h3>
-                                                                <div class="">
-                                                                    <a href="">
-                                                                        content-display-patterns-expressive-css
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="">
-                                                        <div class="result-list">
-                                                            <div class="result-list-inner">
-                                                                <h3>
-                                                                    <a href="#" class="">
-                                                                        Content & and Display patterns with Expressive CSS
-                                                                    </a>
-                                                                </h3>
-                                                                <div class="">
-                                                                    <a href="">
-                                                                        content-display-patterns-expressive-css
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="">
-                                                        <div class="result-list">
-                                                            <div class="result-list-inner">
-                                                                <h3>
-                                                                    <a href="#" class="">
-                                                                        Content & and Display patterns with Expressive CSS
-                                                                    </a>
-                                                                </h3>
-                                                                <div class="">
-                                                                    <a href="">
-                                                                        content-display-patterns-expressive-css
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="">
-                                                        <div class="result-list">
-                                                            <div class="result-list-inner">
-                                                                <h3>
-                                                                    <a href="#" class="">
-                                                                        Content & and Display patterns with Expressive CSS
-                                                                    </a>
-                                                                </h3>
-                                                                <div class="">
-                                                                    <a href="">
-                                                                        content-display-patterns-expressive-css
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="">
-                                                        <div class="result-list">
-                                                            <div class="result-list-inner">
-                                                                <h3>
-                                                                    <a href="#" class="">
-                                                                        Content & and Display patterns with Expressive CSS
-                                                                    </a>
-                                                                </h3>
-                                                                    <a href="">
-                                                                        content-display-patterns-expressive-css
-                                                                    </a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="">
-                                                        <div class="result-list">
-                                                            <div class="result-list-inner">
-                                                                <h3>
-                                                                    <a href="#" class="">
-                                                                        Content & and Display patterns with Expressive CSS
-                                                                    </a>
-                                                                </h3>
-                                                                <a href="">
-                                                                    content-display-patterns-expressive-css
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
                                                     <label for="load-more">Load-less</label>
                                                 </div>
                                                 <label for="load-more">Load More</label>
@@ -493,7 +211,7 @@
     <div class="wrapper">
         <main>
             <div class="site-note">
-                <a href="">
+                <a href="" class="links">
                     <img src="asset/images/svg/images/ugurus-logo.png" alt="UGURUs by DigitalOcean logo">
                 </a>
                 <div class="">
@@ -507,12 +225,12 @@
                 <div class="">
                     <div class="article-grid">
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" src="asset/images/svg/images/paid-subscription-newsletter-thumbnail.png" alt="Thumbnail for #211: Building a Paid Subscription Newsletter with MailPoet + WooCommerce + WordPress">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#211 Building a Paid Subscription Newsletter with MailPoet + WooCommerce + WordPress</a>
+                                    <a href="#" class="links">#211 Building a Paid Subscription Newsletter with MailPoet + WooCommerce + WordPress</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>Aug 23, 2021</p>
@@ -529,18 +247,18 @@
                                         cost-friendly …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" src="asset/images/svg/images/astro-thumbnail.png" alt="Thumbnail for #210: Yapping About Astro">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#"> #210 Yapping About Astro</a>
+                                    <a href="#" class="links"> #210 Yapping About Astro</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>Aug 13, 2021</p>
@@ -553,18 +271,18 @@
                                         we call it a framework if it asks you to “bring your …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/astro-thumbnail.png" alt="Thumbnail for #209: A Netflix Clone with DataStax Astra and Netlify">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#209 A Netflix Clone with DataStax Astra and Netlify</a>
+                                    <a href="#" class="links">#209 A Netflix Clone with DataStax Astra and Netlify</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>Aug 6, 2021</p>
@@ -578,18 +296,18 @@
                                         of showcasing how …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/layout-thumbnail.png" alt="Thumbnail for #208: A CSS Grid Layout with Pictures Down One Side Matched Up with Paragraphs on the Other">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#208 A CSS Grid Layout with Pictures Down One Side Matched Up with Paragraphs on the Other</a>
+                                    <a href="#" class="links">#208 A CSS Grid Layout with Pictures Down One Side Matched Up with Paragraphs on the Other</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>Aug 23, 2021</p>
@@ -602,18 +320,18 @@
                                         up with paragraphs on the other side?It’s a satisfying answer because …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/webpage-test.png" alt="Thumbnail for #207: Performance Testing CSS-Tricks with WebPageTest">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#207 Performance Testing CSS-Tricks with WebPageTest</a>
+                                    <a href="#" class="links">#207 Performance Testing CSS-Tricks with WebPageTest</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>Jul 23, 2021</p>
@@ -627,18 +345,18 @@
                                         <span>getting a little free consulting</span> helping y’all …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/app-platform-thumbnail.png" alt="Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#206 Building a Data-Backed Next.js Site with Prisma & App Platform</a>
+                                    <a href="#" class="links">#206 Building a Data-Backed Next.js Site with Prisma & App Platform</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>Jul 12, 2021</p>
@@ -652,18 +370,18 @@
                                         posts with IDs, titles, content, and the more dynamic …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/thumb-sticky.png" alt="Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#205 Sticky Positioning</a>
+                                    <a href="#" class="links">#205 Sticky Positioning</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>july 9, 2021</p>
@@ -677,18 +395,18 @@
                                         as long as there is room …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/axe-thumbnail.png" alt="Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#204 Using the axe DevTools Web Accessibility Testing Browser Plugin</a>
+                                    <a href="#" class="links">#204 Using the axe DevTools Web Accessibility Testing Browser Plugin</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>Mar 4, 2021</p>
@@ -702,18 +420,18 @@
                                         accessibility problems on any website, <i>then helps …</i>
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/site-thumbnail.png" alt="Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#203 A First Look at Cloudflare Pages</a>
+                                    <a href="#" class="links">#203 A First Look at Cloudflare Pages</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>nov 3, 2022</p>
@@ -728,18 +446,18 @@
                                         put in front of your site’s …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/centered-list-markers-thumbnail.png" alt="Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#202 Centered List Markers</a>
+                                    <a href="#" class="links">#202 Centered List Markers</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>jan 15, 2021</p>
@@ -753,18 +471,18 @@
                                         to accomplish — basically an …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/boop-thumbnail.png" alt="Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#201 Doing Booping</a>
+                                    <a href="#" class="links">#201 Doing Booping</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>Dec 21, 2020</p>
@@ -778,18 +496,18 @@
                                         etc. — should still have those states. A “boop” is a more …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/scroll-to-zoom-thumbnail.png" alt="Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#200 Scroll to Zoom</a>
+                                    <a href="#" class="links">#200 Scroll to Zoom</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>Dec 10, 2020</p>
@@ -803,18 +521,18 @@
                                         my mouse scroll wheel (or trackpad) could be used to zoom the …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/jsx-thumbnail.png" alt="Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#199 Messing with JSX</a>
+                                    <a href="#" class="links">#199 Messing with JSX</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>Dec 11, 2020</p>
@@ -828,18 +546,18 @@
                                         that it does. It turns angle brackets …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/position-thumbnail.png" alt="Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#198 About the Position Property</a>
+                                    <a href="#" class="links">#198 About the Position Property</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>Nov 20, 2020</p>
@@ -852,18 +570,18 @@
                                         <li><strong>absolute:</strong> top/right/bottom/left moves the element </li>
                                     </ul>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
                         </article>
                         <article>
-                            <a href="">
+                            <a href="" class="links">
                                 <img width="1280" height="780" class="video-thumbnail" loading="lazy" src="asset/images/svg/images/stackbit-thubnail.png" alt="Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform">
                             </a>
                             <div class="video-info">
                                 <h2>
-                                    <a href="#">#197 A Look at Stackbit and Stackbit Studio</a>
+                                    <a href="#" class="links">#197 A Look at Stackbit and Stackbit Studio</a>
                                 </h2>
                                 <div class="guide-time">
                                     <p>Nov 2, 2020</p>
@@ -874,7 +592,7 @@
                                         The <a href="#">Stackbit</a> app helps you kick out a new Jamstack site very quickly. Pick a theme, a static site generator, and a CMS and it’ll get a repo going for you on the double. Stackbit has gotten much more powerful …
                                     </p>
                                 </div>
-                                <a href="#" class="button">
+                                <a href="#" class="button links">
                                     WATCH THE SCREENCASTS
                                 </a>
                             </div>
@@ -929,14 +647,14 @@
                 <h2 style="margin-bottom: 15px;">Free Video Course</h2>
                 <div class="article-grid">
                     <div class="video-card">
-                        <a href="#" class="video-thumb">
+                        <a href="#" class="video-thumb links">
                             <img class="guide-card-img" src="asset/images/svg/images/svg-fallback-guide.png" alt="">
                         </a>
                         <div class="video-info">
                             <div class="">
                                 <span>Video Course (2015)</span>
                             </div>
-                            <h2><a href="#">Everything You Need To Know About SVG</a></h2>
+                            <h2><a href="#" class="links">Everything You Need To Know About SVG</a></h2>
                             <p class="guide-excerpt">
                                 Using SVG can be very simple, but if you
                                 start digging in, there is a lot to know about
@@ -947,61 +665,61 @@
                                 implementing it as a system and fancy stuff
                                 like animating it.
                             </p>
-                            <a href="#" class="button">
+                            <a href="#" class="button links">
                                 GO TO COURSE →
                             </a>
                         </div>
                     </div>
                     <div class="video-card">
-                        <a href="#" class="video-thumb">
+                        <a href="#" class="video-thumb links">
                             <img class="guide-card-img" src="asset/images/svg/images/guide-jquery-thumbnail.png" alt="">
                         </a>
                         <div class="video-info">
                             <div class="">
                                 <span>Video Course (2013)</span>
                             </div>
-                            <h2><a href="#">Learn jQuery from Scratch</a></h2>
+                            <h2><a href="#" class="links">Learn jQuery from Scratch</a></h2>
                             <p class="guide-excerpt">
                                 This series will take you from zero to being confident in writing
                                 and working with jQuery and JavaScript.
                             </p>
-                            <a href="#" class="button">
+                            <a href="#" class="button links">
                                 GO TO COURSE →
                             </a>
                         </div>
                     </div>
                     <div class="video-card">
-                        <a href="#" class="video-thumb">
+                        <a href="#" class="video-thumb links">
                             <img class="guide-card-img" src="asset/images/svg/images/redisign-thumbnail.png" alt="">
                         </a>
                         <div class="video-info">
                             <div class="">
                                 <span>Video Course (2012)</span>
                             </div>
-                            <h2><a href="#">The Big v10 Redesign Project</a></h2>
+                            <h2><a href="#" class="links">The Big v10 Redesign Project</a></h2>
                             <p class="guide-excerpt">
                                 Over 150 videos detailing every step of the redesign process for this 
                                 very website, as it was in v10 in 2012.
                             </p>
-                            <a href="#" class="button">
+                            <a href="#" class="button links">
                                 GO TO COURSE →
                             </a>
                         </div>
                     </div>
                     <div class="video-card">
-                        <a href="#" class="video-thumb">
+                        <a href="#" class="video-thumb links">
                             <img class="guide-card-img" src="asset/images/svg/images/artist-website-thumbnail.png" alt="">
                         </a>
                         <div class="video-info">
                             <div class="">
                                 <span>Video Course (2015)</span>
                             </div>
-                            <h2><a href="#">Building a Mobile-First WordPress-Powered Artists Website</a></h2>
+                            <h2><a href="#" class="links">Building a Mobile-First WordPress-Powered Artists Website</a></h2>
                             <p class="guide-excerpt">
                                 The complete process of designing an artist's
                                 website from a mobile-first perspective using WordPress as a CMS.
                             </p>
-                            <a href="#" class="button">
+                            <a href="#" class="button links">
                                 GO TO COURSE →
                             </a>
                         </div>
@@ -1125,5 +843,6 @@
             </div>
         </div> 
     </div>
+    <script src="javascript/index.js"></script>
 </body>
 </html>

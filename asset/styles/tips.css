@@ -17,9 +17,6 @@ main .site-note{
     color: #0089c7;
     text-decoration: none;
 }
-.site-note a:hover{
-    opacity: .66;
-}
 main a img{
     max-width: 100%;
 }
@@ -164,9 +161,6 @@ main a img{
     background: linear-gradient(85deg,#434343,#262626);
     transition: transform .2s;
     margin: 0;
-}
-.mini-card a:hover{
-    opacity: .66;
 }
 .mini-card:hover{
     transform: translateY(-1rem) rotate(3deg) ;
@@ -336,7 +330,6 @@ article img:hover{
     color: #000;
     text-decoration: none;
 }
-/* mm */
 .article-article ul{
     list-style: none;
     margin: 0 0 .5rem;
