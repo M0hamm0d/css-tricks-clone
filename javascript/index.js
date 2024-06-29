@@ -1,71 +1,68 @@
 "use strict";
-let relTopics = document.querySelector('.list-container');
-let resultList = document.querySelector('.result-list-container');
-console.log(resultList);
+const relTopics = document.querySelector('.list-container');
+const resultList = document.querySelector('.result-list-container');
 const loadMoreSection = document.querySelector('.load-more-section');
-const search = document.querySelector('#search')
-//console.log(loadMoreSection);
+const search = document.querySelector('#search');
 function displaySearchModal(){
     search.classList.toggle('search')
 };
 function closeSearchModal() {
     search.classList.toggle('search')
-}
+};
 function Topics(topic, subtopic, img){
     this.topic = topic;
     this.subtopic = subtopic;
     this.img = img
-}
-let topic1 = new Topics(
+};
+let contentDisplay = new Topics(
     'Content & Display pattern with Expressive CSS',
     'content-display-patterns-expressive-css',
 
 );
-let topic2 = new Topics(
+let codeReview = new Topics(
     'More code review tools (on Github)',
     'code-review-tools',
 );
-let topic3 = new Topics(
+let pixelIllustration = new Topics(
     'Resolution Independent Pixel Illustration',
     'resolution-independent-pixel-illustration',
 );
-let topic4 = new Topics(
+let fontFace = new Topics(
     'What is the deal with declaring font properties on @font-face',
     'resolution-independent-pixel-illustration',
     'asset/images/svg/images/font-face-usage.png'
 );
-let topic5 = new Topics(
+let commentForm = new Topics(
     '#147:Starting a React-Powered Comment Form',
     'video-screencast>147-starting-react-powered-comment-form',
 );
-let topic6 = new Topics(
+let svgFilter = new Topics(
     'Comic Book FX Lettering with SVG Filters',
     'comic-book-fx-lettering-svg-filters',
 );
-let topic7 = new Topics(
+let transArticle = new Topics(
     "So You'd Like To Translate a CSS-Tricks Article",
     'translate-an-article',
 );
-let topic8 = new Topics(
+let responsiveTable = new Topics(
     'Accessible,Simple,Responsive Table',
     'accessible-simple-responsive-table',
     'asset/images/svg/images/comparison-tables.jpg'
 );
-let topic9 = new Topics(
+let ReactContainer = new Topics(
     "Leveling Up With ReactContainer Component",
     'learning-react-container-components',
 );
-let topic10 = new Topics(
+let webApp = new Topics(
     "Progressive Web Apps: The Long Game",
     'progressive-web-apps-long-game',
 );
-let topic11 = new Topics(
+let webFont = new Topics(
     "Using Web Fonts at All:Point/Counterpoint",
     'content-display-patterns-expressive-css',
 );
-let relevantTopics = [topic11, topic10, topic9,topic8,topic7,topic6,topic5,topic4, topic3, topic2, topic1];
+let relevantTopics = [webFont, webApp, ReactContainer,responsiveTable, transArticle, svgFilter, commentForm, fontFace, pixelIllustration, codeReview, contentDisplay];
 const displayReview = function(arr) {
-    //relTopics.innerHTML = '';
     arr.forEach(item => {
         const type = item.img ? `<img class="" src="${item.img}" style="width: 128px;height: 128px;">` : '';
         let html = `
@@ -93,9 +90,9 @@ const displayReview = function(arr) {
     });
 };
 displayReview(relevantTopics);
-let load = function(parameter){
+let loadMore = function(parameter){
     parameter.forEach(function(item){
-        let htm = `
+        let html = `
         <li class="">
             <div class="result-list">
                 <div class="result-list-inner">
@@ -113,13 +110,133 @@ let load = function(parameter){
             </div>
         </li>
         `
-        resultList.insertAdjacentHTML("afterbegin",htm);
+        resultList.insertAdjacentHTML("afterbegin", html);
     })
 }
-let Load = [topic1, topic1, topic1, topic1, topic1, topic1, topic1]
-load(Load)
+let loadMoreInner = [contentDisplay, contentDisplay, contentDisplay, contentDisplay, contentDisplay, contentDisplay, contentDisplay];
+loadMore(loadMoreInner);
 relTopics.insertAdjacentHTML("beforeend", loadMoreSection);
 
+let subPost = document.querySelector('.sub-post');
+let subTag = document.querySelector('.sub-tags');
+let subCategory = document.querySelector('.sub-categories');
+let subYear =document.querySelector('.sub-year')
+let svg = {
+    labelName: 'SVG (206)'
+};
+let wordpress = {
+    labelName: 'wordPress (165)'
+};
+let accessibility = {
+    labelName: 'Accessibility (160)'
+};
+let performance = {
+    labelName: 'Performance (154)'
+};
+let react = {
+    labelName: 'React (147)'
+};
+
+//Post
+let post = {
+    labelName: 'Post (6319)'
+};
+let page = {
+    labelName: 'Page (1608)'
+};
+let newsletter = {
+    labelName: 'Newsletter (304)'
+};
+let chapter = {
+    labelName: 'Chapter (20)'
+};
+
+//subcategory
+let article = {
+    labelName: 'Article (4687)'
+};
+let link = {
+    labelName: 'Link (1973)'
+};
+let sponsor = {
+    labelName: 'Sponsor (302)'
+};
+let poll = {
+    labelName: 'Poll (101)'
+};
+let intermediate = {
+    labelName: 'Intermediate (62)'
+};
+//sub-year
+let Year5 = {
+    labelName: '2023 (34)'
+};
+let Year4 = {
+    labelName: '2022 (324)'
+};
+let Year3 = {
+    labelName: '2021 (829)'
+};
+let Year2 = {
+    labelName: '2020 (987)'
+};
+let Year1 = {
+    labelName: '2019 (808)'
+};
+
+let posts = [post, page, newsletter, chapter]
+let tags = [svg, wordpress, accessibility, performance, react];
+let categories = [article, link, sponsor, poll, intermediate];
+let years = [Year1, Year2, Year3, Year4, Year5]
+function subTags(arr, arr1, arr2, arr3){
+    subTag.innerHTML = '';
+    subPost.innerHTML = '';
+    subCategory.innerHTML = '';
+    subYear.innerHTML = ''
+    arr.forEach(function(item){
+        let idName = item.labelName.split(' ').slice(0,1)
+        let html = `
+        <div class="">
+            <input type="checkbox" name="post" id="${idName}">
+            <label for="${idName}">${item.labelName}</label>
+        </div>
+        `
+        subTag.insertAdjacentHTML("beforeend", html)
+    });
+    arr1.forEach(function(item){
+        let idName = item.labelName.split(' ').slice(0,1)
+        let html = `
+        <div class="">
+            <input type="checkbox" name="post" id="${idName}">
+            <label for="${idName}">${item.labelName}</label>
+        </div>
+        `
+        subPost.insertAdjacentHTML("beforeend", html)
+    });
+    arr2.forEach(function(item){
+        let idName = item.labelName.split(' ').slice(0,1)
+        let html = `
+        <div class="">
+            <input type="checkbox" name="post" id="${idName}">
+            <label for="${idName}">${item.labelName}</label>
+        </div>
+        `
+        subCategory.insertAdjacentHTML("beforeend", html)
+    });
+    arr3.forEach(function(item){
+        let idName = item.labelName.split(' ').slice(0,1)
+        let html = `
+        <div class="">
+            <input type="checkbox" name="post" id="${idName}">
+            <label for="${idName}">${item.labelName}</label>
+        </div>
+        `
+        subYear.insertAdjacentHTML("beforeend", html)
+    });
+};
+subTags(tags, posts, categories, years);
+
+//Landing Page
 let mailPoet = {
     img: 'asset/images/svg/images/paid-subscription-newsletter-thumbnail.png',
     alt: 'Thumbnail for #211: Building a Paid Subscription Newsletter with MailPoet + WooCommerce + WordPress',
@@ -164,8 +281,149 @@ let netflixClone = {
     `,
     viewMore: 'WATCH THE SCREENCASTS'
 };
-let articleGrid = document.querySelector('.article-grid')
-let screencast = [mailPoet, astro, netflixClone];
+let gridLayout = {
+    img: 'asset/images/svg/images/layout-thumbnail.png',
+    alt: 'Thumbnail for #208: A CSS Grid Layout with Pictures Down One Side Matched Up with Paragraphs on the Other',
+    title: '#208 A CSS Grid Layout with Pictures Down One Side Matched Up with Paragraphs on the Other',
+    date: 'Aug 23, 2021',
+    time: 'Running Time: 21:17',
+    paragraph: `
+        This is the video version of <a href="#"> a blog post we did</a> asking the question:
+        How do you make a layout with pictures down one side of a page matched 
+        up with paragraphs on the other side?It’s a satisfying answer because …
+    `,
+    viewMore: 'WATCH THE SCREENCASTS'
+};
+let WebPageTest = {
+    img: 'asset/images/svg/images/webpage-test.png',
+    alt: 'Thumbnail for #207: Performance Testing CSS-Tricks with WebPageTest',
+    title: '#207 Performance Testing CSS-Tricks with WebPageTest',
+    date: 'Jul 23, 2021',
+    time: 'Running Time: 01:13:22',
+    paragraph: `
+        I get a hands-on performance review with <a href="#">Tim Kadlec</a> of <a href="#">WebPageTest!</a>
+        This is a real honor as Tim
+        is a real performance guru who knows WebPageTest in and out. I’m all about 
+        <span>getting a little free consulting</span> helping y’all …
+    `,
+    viewMore: 'WATCH THE SCREENCASTS'
+};
+let nextJS = {
+    img: 'asset/images/svg/images/app-platform-thumbnail.png',
+    alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
+    title: '#206 Building a Data-Backed Next.js Site with Prisma & App Platform',
+    date: 'Jul 12, 2021',
+    time: 'Running Time: 42:07',
+    paragraph: `
+        I’m joined by <a href="#">Chris Sev</a> from <a href="#"> Digital Ocean</a>
+        to talk about their new <a href="#">App Platform.</a> We’re going to use it 
+        to build a little website. The site will be blog-like:
+        posts with IDs, titles, content, and the more dynamic …
+    `,
+    viewMore: 'WATCH THE SCREENCASTS'
+};
+let stickyPositioning = {
+    img: 'asset/images/svg/images/thumb-sticky.png',
+    alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
+    title: '#205 Sticky Positioning',
+    date: 'Jul 9, 2021',
+    time: 'Running Time: 19:17',
+    paragraph: `
+        How it works <br>You apply <a href="#">position: sticky;</a> 
+        to an element along with a top, left, right, or bottom threshold
+        and it will “stick” in that position when the threshold is passed,
+        as long as there is room …
+    `,
+    viewMore: 'WATCH THE SCREENCASTS'
+};
+let devTool = {
+    img: 'asset/images/svg/images/axe-thumbnail.png',
+    alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
+    title: '#204 Using the axe DevTools Web Accessibility Testing Browser Plugin',
+    date: 'Mar 9, 2021',
+    time: 'Running Time: 31:40',
+    paragraph: `
+        In this video, I’m joined by <a href="#">Preety Kumar</a> of <a href="#">Deque</a> 
+        to take a look at their <a href="#">DevTools plugin</a> for <a href="#">axe.</a> 
+        Short story: this is an <i>amazing plugin</i> that helps you quickly find 
+        accessibility problems on any website, <i>then helps …</i>
+    `,
+    viewMore: 'WATCH THE SCREENCASTS'
+};
+let CloudFlare = {
+    img: 'asset/images/svg/images/site-thumbnail.png',
+    alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
+    title: '#203 A First Look at Cloudflare Pages',
+    date: 'Nov 3, 2021',
+    time: 'Running Time: 29:58',
+    paragraph: `
+        <a href="#">Cloudflare Pages </a>is Jamstack hosting, meaning 
+        it’s a static file host that runs your builds and lets you
+        do <a href="#">dynamic things</a> with JavaScript and services.
+        You might normally think of Cloudflare as something you 
+        put in front of your site’s …
+    `,
+    viewMore: 'WATCH THE SCREENCASTS'
+};
+let listMaker = {
+    img: 'asset/images/svg/images/centered-list-markers-thumbnail.png',
+    alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
+    title: '#202 Centered List Markers',
+    date: 'Jan 15, 2021',
+    time: 'Running Time: 10:13',
+    paragraph: `
+        Like so many things CSS, there is all sorts of little stuff to 
+        know, even something as minuscule as centering a list marker.
+        A reader wrote in with a screenshot of what they were trying
+        to accomplish — basically an …
+    `,
+    viewMore: 'WATCH THE SCREENCASTS'
+};
+let booping = {
+    img: 'asset/images/svg/images/boop-thumbnail.png',
+    alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
+    title: '#201 Doing Booping',
+    date: 'Dec 21, 2020',
+    time: 'Running Time: 15:42',
+    paragraph: `
+        Joshua Comeau crowd-coined the term <a href="#">“boop”</a> 
+        (high five,<a href="#">Adam Kuhn</a> ). These are sorta like hover/focus states, 
+        except that they aren’t. Your thingies — things like links, buttons, 
+        etc. — should still have those states. A “boop” is a more …
+    `,
+    viewMore: 'WATCH THE SCREENCASTS'
+};
+let zoomSrolling = {
+    img: 'asset/images/svg/images/scroll-to-zoom-thumbnail.png',
+    alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
+    title: '#200 Scroll to Zoom',
+    date: 'Dec 10, 2020',
+    time: 'Running Time: 10:05',
+    paragraph: `
+        Fair warning: you aren’t going to need this every day! 
+        I just happened to be looking at <a href="#">a neat 
+        little SVG warping tool</a> that had a feature where
+        my mouse scroll wheel (or trackpad) could be used to zoom the …
+    `,
+    viewMore: 'WATCH THE SCREENCASTS'
+};
+let jsx = {
+    img: 'asset/images/svg/images/jsx-thumbnail.png',
+    alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
+    title: '#199 Messing with JSX',
+    date: 'Dec 11, 2020',
+    time: 'Running Time: 12:12',
+    paragraph: `
+        I probably should have learned this long ago, but alas, 
+        here we are. Turns out you can tell what function you want 
+        JSX to use. Yep, JSX really only has one primary transformation
+        that it does. It turns angle brackets …
+    `,
+    viewMore: 'WATCH THE SCREENCASTS'
+};
+
+let articleGrid = document.querySelector('.article-grid');
+let screencast = [mailPoet, astro, netflixClone, gridLayout, WebPageTest, nextJS, stickyPositioning, devTool, CloudFlare, listMaker, booping, zoomSrolling, jsx];
 function screenCast(arr){
     articleGrid.innerHTML = ''
     arr.forEach(function(item){
@@ -193,74 +451,79 @@ function screenCast(arr){
                 </div>
             </article>
         `
-        articleGrid.insertAdjacentHTML("beforeend", html)
+        articleGrid.insertAdjacentHTML("beforeend", html);
     })
 };
-screenCast(screencast)
-
-// let widgetSearchContainer = document.querySelector('.widget-search-container');
-// let postType = {
-//     name: 'Post type',
-//     opt1: 'Post(6319)',
-//     opt2: 'Page(1608)',
-//     opt3: 'Newsletter',
-//     opt4: 'Chapter(20)',
-// };
-// let Categories = {
-//     name: 'Categories',
-//     opt1: 'Article(4687)',
-//     opt2: 'Link(1973)',
-//     opt3: 'Sponsored(302)',
-//     opt4: 'Poll(101))',
-//     opt5: 'Intermediate(62)'
-// };
-// let Tags = {
-//     name: 'Tags',
-//     opt1: 'SVG(206)',
-//     opt2: 'WordPress(165)',
-//     opt3: 'Accessibility(160)',
-//     opt4: 'Performance(154))',
-//     opt5: 'React(147)'
-// };
-// let Year = {
-//     name: 'Year',
-//     opt1: '2023(34)',
-//     opt2: '2022(324)',
-//     opt3: '2021(829)',
-//     opt4: '2020(987))',
-//     opt5: '2019(808)',
-// };
-// let filterOption = [postType, Categories, Tags, Year]
-// function filter(arr){
-//     arr.forEach(function(item){
-//         let html = `
-//         <div class="widget-search">
-//             <h3>${item.name}</h3>
-//             <div class="">
-//                 <div class="">
-//                     <input type="checkbox" name="post" id="">
-//                     <label for="post">${item.opt1}</label>
-//                 </div>
-//                 <div class="">
-//                     <input type="checkbox" name="post" id="post">
-//                     <label for="post">${item.opt4}</label>
-//                 </div>
-//                 <div class="">
-//                     <input type="checkbox" name="post" id="post">
-//                     <label for="post">${item.opt3}</label>
-//                 </div>
-//                 <div class="">
-//                     <input type="checkbox" name="post" id="post">
-//                     <label for="post">${item.opt2}</label>
-//                 </div>
-//                 <div class="">
-//                     <input type="checkbox" name="post" id="post">
-//                     <label for="post">${item.opt5}</label>
-//                 </div>
-//             </div>
-//         </div>
-//         `
-//         widgetSearchContainer.insertAdjacentHTML("beforeend",html)
-//     })
-// };
-// filter(filterOption);
+screenCast(screencast);
+let videoCards = document.querySelector('.video-card-container');
+let aboutSvg = {
+    img: 'asset/images/svg/images/svg-fallback-guide.png',
+    videoCourse: 'Video Course (2015)',
+    topics: 'Everything You Need To Know About SVG',
+    briefInfo: `Using SVG can be very simple, but if you
+    start digging in, there is a lot to know about
+    SVG. In his series you're going to learn why
+    SVG is such an important part of building
+    websites. From why SVG is useful and how
+    to get your hands on it all the way to
+    implementing it as a system and fancy stuff
+    like animating it.`,
+    linkToCourse: 'GO TO COURSE →'
+};
+let jQuery = {
+    img: 'asset/images/svg/images/guide-jquery-thumbnail.png',
+    videoCourse: 'Video Course (2013)',
+    topics: 'Learn jQuery from Scratch',
+    briefInfo: `
+    This series will take you from zero to being confident in writing
+    and working with jQuery and JavaScript.
+    `,
+    linkToCourse: 'GO TO COURSE →'
+};
+let v10 = {
+    img: 'asset/images/svg/images/redisign-thumbnail.png',
+    videoCourse: 'Video Course (2010)',
+    topics: 'The Big v10 Redesign Project',
+    briefInfo: `
+    Over 150 videos detailing every step of the redesign process for this 
+    very website, as it was in v10 in 2012.
+    `,
+    linkToCourse: 'GO TO COURSE →'
+};
+let wordPressWebsite = {
+    img: 'asset/images/svg/images/artist-website-thumbnail.png',
+    videoCourse: 'Video Course (2015)',
+    topics: 'Building a Mobile-First WordPress-Powered Artists Website',
+    briefInfo: `
+    The complete process of designing an artist's
+    website from a mobile-first perspective using WordPress as a CMS.
+    `,
+    linkToCourse: 'GO TO COURSE →'
+};
+let videoCourses = [aboutSvg, jQuery, v10, wordPressWebsite];
+function videoCardContainer(arr){
+    videoCards.innerHTML = '';
+    arr.forEach(function(item){
+        let html = `
+            <div class="video-card">
+                <a href="#" class="video-thumb links">
+                    <img class="guide-card-img" src="${item.img}" alt="">
+                </a>
+                <div class="video-info">
+                    <div class="">
+                        <span>${item.videoCourse}</span>
+                    </div>
+                    <h2><a href="#" class="links"> ${item.topics} </a></h2>
+                    <p class="guide-excerpt">
+                    ${item.briefInfo}
+                    </p>
+                    <a href="#" class="button links">
+                    ${item.linkToCourse}
+                    </a>
+                </div>
+            </div>
+        `
+        videoCards.insertAdjacentHTML("beforeend", html)
+    })
+};
+videoCardContainer(videoCourses);
