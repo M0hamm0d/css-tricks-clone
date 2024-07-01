@@ -116,7 +116,12 @@ let loadMore = function(parameter){
 let loadMoreInner = [contentDisplay, contentDisplay, contentDisplay, contentDisplay, contentDisplay, contentDisplay, contentDisplay];
 loadMore(loadMoreInner);
 relTopics.insertAdjacentHTML("beforeend", loadMoreSection);
+let searchPopularResult = document.querySelector('#searchPopularResult');
 
+let result = loadMoreInner
+.map(item => {return item.topic})
+.filter(item => item.includes('c'));
+console.log(result);
 let subPost = document.querySelector('.sub-post');
 let subTag = document.querySelector('.sub-tags');
 let subCategory = document.querySelector('.sub-categories');

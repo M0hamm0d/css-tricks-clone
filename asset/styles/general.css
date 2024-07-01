@@ -108,7 +108,7 @@ header .header-nav-area .search-filter{
 }
 .header-nav-area .search-logo .search{
     display: none;
-    background: rgba(29,35,39,.7);
+    /* background: rgba(29,35,39,.7);
     color: #e6f1f5;
     padding: 3rem;
     position: fixed;
@@ -119,7 +119,7 @@ header .header-nav-area .search-filter{
     z-index: 99999999999;
     opacity: 1;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: auto; */
 }
 #search{
     background: rgba(29,35,39,.7);
