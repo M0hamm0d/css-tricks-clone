@@ -9,6 +9,18 @@ function displaySearchModal(){
 function closeSearchModal() {
     search.classList.toggle('search')
 };
+function searchFilter(){
+    let inputFilter = document.getElementById('searchPopularResult').value.toUpperCase();
+    let list = relTopics.getElementsByTagName('li');
+    for (let li of list){
+        let textValue = li.getElementsByTagName('h3')[0].innerText;
+        if(textValue.toUpperCase().indexOf(inputFilter) > -1){
+            li.style.display = '';
+        }else {
+            li.style.display = 'none'
+        }
+    }
+};
 function Topics(topic, subtopic, img){
     this.topic = topic;
     this.subtopic = subtopic;
@@ -69,7 +81,7 @@ const displayReview = function(arr) {
             <li>
                 <div class="result-list">
                     <div class="result-list-inner">
-                        <h3>
+                        <h3 class="h3">
                             <a href="#" class="">
                                 ${item.topic}
                             </a>
@@ -241,6 +253,8 @@ function subTags(arr, arr1, arr2, arr3){
 };
 subTags(tags, posts, categories, years);
 
+
+let viewMore = 'WATCH THE SCREENCASTS'
 //Landing Page
 let mailPoet = {
     img: 'asset/images/svg/images/paid-subscription-newsletter-thumbnail.png',
@@ -257,7 +271,7 @@ let mailPoet = {
         WooCommerce Subscriptions, making it a very
         cost-friendly …
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+    viewMore: `${viewMore}`
 };
 let astro = {
     img: 'asset/images/svg/images/astro-thumbnail.png',
@@ -270,7 +284,7 @@ let astro = {
         Should we call it a framework? We’ll get into that in the video. How can 
         we call it a framework if it asks you to “bring your …
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+    viewMore: `${viewMore}`
 };
 let netflixClone = {
     img: 'asset/images/svg/images/astro-thumbnail.png',
@@ -284,7 +298,7 @@ let netflixClone = {
         who has <a href="#">a video </a>you should watch as well) that does a good job
         of showcasing how …
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+    viewMore: `${viewMore}`
 };
 let gridLayout = {
     img: 'asset/images/svg/images/layout-thumbnail.png',
@@ -297,7 +311,7 @@ let gridLayout = {
         How do you make a layout with pictures down one side of a page matched 
         up with paragraphs on the other side?It’s a satisfying answer because …
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+    viewMore: `${viewMore}`
 };
 let WebPageTest = {
     img: 'asset/images/svg/images/webpage-test.png',
@@ -311,7 +325,7 @@ let WebPageTest = {
         is a real performance guru who knows WebPageTest in and out. I’m all about 
         <span>getting a little free consulting</span> helping y’all …
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+    viewMore: `${viewMore}`
 };
 let nextJS = {
     img: 'asset/images/svg/images/app-platform-thumbnail.png',
@@ -325,7 +339,7 @@ let nextJS = {
         to build a little website. The site will be blog-like:
         posts with IDs, titles, content, and the more dynamic …
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+    viewMore: `${viewMore}`
 };
 let stickyPositioning = {
     img: 'asset/images/svg/images/thumb-sticky.png',
@@ -339,7 +353,7 @@ let stickyPositioning = {
         and it will “stick” in that position when the threshold is passed,
         as long as there is room …
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+   viewMore: `${viewMore}`
 };
 let devTool = {
     img: 'asset/images/svg/images/axe-thumbnail.png',
@@ -353,7 +367,7 @@ let devTool = {
         Short story: this is an <i>amazing plugin</i> that helps you quickly find 
         accessibility problems on any website, <i>then helps …</i>
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+    viewMore: `${viewMore}`
 };
 let CloudFlare = {
     img: 'asset/images/svg/images/site-thumbnail.png',
@@ -368,7 +382,7 @@ let CloudFlare = {
         You might normally think of Cloudflare as something you 
         put in front of your site’s …
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+   viewMore: `${viewMore}`
 };
 let listMaker = {
     img: 'asset/images/svg/images/centered-list-markers-thumbnail.png',
@@ -382,7 +396,7 @@ let listMaker = {
         A reader wrote in with a screenshot of what they were trying
         to accomplish — basically an …
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+    viewMore: `${viewMore}`
 };
 let booping = {
     img: 'asset/images/svg/images/boop-thumbnail.png',
@@ -396,7 +410,7 @@ let booping = {
         except that they aren’t. Your thingies — things like links, buttons, 
         etc. — should still have those states. A “boop” is a more …
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+    viewMore: `${viewMore}`
 };
 let zoomSrolling = {
     img: 'asset/images/svg/images/scroll-to-zoom-thumbnail.png',
@@ -410,7 +424,7 @@ let zoomSrolling = {
         little SVG warping tool</a> that had a feature where
         my mouse scroll wheel (or trackpad) could be used to zoom the …
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+    viewMore: `${viewMore}`
 };
 let jsx = {
     img: 'asset/images/svg/images/jsx-thumbnail.png',
@@ -424,33 +438,38 @@ let jsx = {
         JSX to use. Yep, JSX really only has one primary transformation
         that it does. It turns angle brackets …
     `,
-    viewMore: 'WATCH THE SCREENCASTS'
+    viewMore: `${viewMore}`
 };
 
 let articleGrid = document.querySelector('.article-grid');
 let screencast = [mailPoet, astro, netflixClone, gridLayout, WebPageTest, nextJS, stickyPositioning, devTool, CloudFlare, listMaker, booping, zoomSrolling, jsx];
+// for (let getArt of getArticle){
+//     getArt.setAttribute('class', 'article')
+//     console.log(getArt);
+// };
+//console.log(getArticle);
 function screenCast(arr){
     articleGrid.innerHTML = ''
     arr.forEach(function(item){
         let html = `
             <article>
-                <a href="" class="links">
+                <a>
                     <img width="1280" height="780" class="video-thumbnail" src="${item.img}" alt="${item.alt}">
                 </a>
-                <div class="video-info">
+                <div>
                     <h2>
-                        <a href="#" class="links">${item.title}</a>
+                        <a>${item.title}</a>
                     </h2>
                     <div class="guide-time">
                         <p>${item.date}</p>
                         <p>${item.time}</p>
                     </div>
-                    <div class="guide-excerpt">
+                    <div class="">
                         <p>
                         ${item.paragraph}
                         </p>
                     </div>
-                    <a href="#" class="button links">
+                    <a>
                     ${item.viewMore}
                     </a>
                 </div>
@@ -460,6 +479,28 @@ function screenCast(arr){
     })
 };
 screenCast(screencast);
+const getArticle = document.getElementsByTagName('article');
+console.log(getArticle);
+for (let getArt of getArticle){
+    //Anchor Tag(First child )
+    console.log(getArt);
+    getArt.getElementsByTagName('a')[0].className = 'links';
+    getArt.firstElementChild.href = '';
+    //Last Element, Div Tag
+    getArt.lastElementChild.className = 'video-info';
+    getArt.lastElementChild.href = '';
+    //H2 > A Class Name
+    getArt.lastElementChild.firstElementChild.firstElementChild.className = 'links';
+    getArt.lastElementChild.firstElementChild.firstElementChild.href = '#';
+    getArt.lastElementChild.href = '';
+    //guide-time
+    getArt.lastElementChild.children[1].className = 'guide-time';
+    //guide-excerpt
+    getArt.lastElementChild.children[2].className = 'guide-excerpt';
+    //Video Info > button (last element);
+    getArt.lastElementChild.lastElementChild.className = 'button links';
+    getArt.lastElementChild.lastElementChild.href = '';
+};
 let videoCards = document.querySelector('.video-card-container');
 let aboutSvg = {
     img: 'asset/images/svg/images/svg-fallback-guide.png',
