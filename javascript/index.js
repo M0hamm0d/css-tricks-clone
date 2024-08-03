@@ -9,80 +9,93 @@ function displaySearchModal(){
 function closeSearchModal() {
     search.classList.toggle('search')
 };
-function searchFilter(){
-    let inputFilter = document.getElementById('searchPopularResult').value.toUpperCase();
-    let list = relTopics.getElementsByTagName('li');
-    for (let li of list){
-        let textValue = li.getElementsByTagName('h3')[0].innerText;
-        if(textValue.toUpperCase().indexOf(inputFilter) > -1){
-            li.style.display = '';
-        }else {
-            li.style.display = 'none'
-        }
-    }
+// function searchFilter(){
+//     let inputFilter = document.getElementById('searchPopularResult').value.toUpperCase();
+//     let list = relTopics.getElementsByTagName('li');
+//     for (let li of list){
+//         let textValue = li.getElementsByTagName('h3')[0].innerText;
+//         if (textValue.toUpperCase().indexOf(inputFilter) > -1){
+//             li.style.display = '';
+//         } else {
+//             li.style.display = 'none'
+//         }
+//     }
+// };
+console.log(relTopics);
+let contentDisplay = {
+    topic:'Content & Display pattern with Expressive CSS',
+    subtopic:'content-display-patterns-expressive-css',
 };
-function Topics(topic, subtopic, img){
-    this.topic = topic;
-    this.subtopic = subtopic;
-    this.img = img
+let codeReview = {
+    topic:'More code review tools (on Github)',
+    subtopic:'code-review-tools',
 };
-let contentDisplay = new Topics(
-    'Content & Display pattern with Expressive CSS',
-    'content-display-patterns-expressive-css',
-
-);
-let codeReview = new Topics(
-    'More code review tools (on Github)',
-    'code-review-tools',
-);
-let pixelIllustration = new Topics(
-    'Resolution Independent Pixel Illustration',
-    'resolution-independent-pixel-illustration',
-);
-let fontFace = new Topics(
-    'What is the deal with declaring font properties on @font-face',
-    'resolution-independent-pixel-illustration',
-    'asset/images/svg/images/font-face-usage.png'
-);
-let commentForm = new Topics(
-    '#147:Starting a React-Powered Comment Form',
-    'video-screencast>147-starting-react-powered-comment-form',
-);
-let svgFilter = new Topics(
-    'Comic Book FX Lettering with SVG Filters',
-    'comic-book-fx-lettering-svg-filters',
-);
-let transArticle = new Topics(
-    "So You'd Like To Translate a CSS-Tricks Article",
-    'translate-an-article',
-);
-let responsiveTable = new Topics(
-    'Accessible,Simple,Responsive Table',
-    'accessible-simple-responsive-table',
-    'asset/images/svg/images/comparison-tables.jpg'
-);
-let ReactContainer = new Topics(
-    "Leveling Up With ReactContainer Component",
-    'learning-react-container-components',
-);
-let webApp = new Topics(
-    "Progressive Web Apps: The Long Game",
-    'progressive-web-apps-long-game',
-);
-let webFont = new Topics(
-    "Using Web Fonts at All:Point/Counterpoint",
-    'content-display-patterns-expressive-css',
-);
+let pixelIllustration = {
+    topic:'Resolution Independent Pixel Illustration',
+    subtopic:'resolution-independent-pixel-illustration',
+};
+let fontFace = {
+    topic:'What is the deal with declaring font properties on @font-face',
+    subtopic:'resolution-independent-pixel-illustration',
+    img:'asset/images/svg/images/font-face-usage.png'
+};
+let commentForm = {
+    topic:'#147:Starting a React-Powered Comment Form',
+    subtopic:'video-screencast>147-starting-react-powered-comment-form',
+};
+let svgFilter ={
+    topic:'Comic Book FX Lettering with SVG Filters',
+    subtopic:'comic-book-fx-lettering-svg-filters',
+};
+let transArticle = {
+    topic:"So You'd Like To Translate a CSS-Tricks Article",
+    subtopic:'translate-an-article',
+};
+let responsiveTable = {
+    topic:'Accessible,Simple,Responsive Table',
+    subtopic:'accessible-simple-responsive-table',
+    img:'asset/images/svg/images/comparison-tables.jpg'
+};
+let ReactContainer ={
+    topic:"Leveling Up With ReactContainer Component",
+    subtopic:'learning-react-container-components',
+};
+let webApp = {
+    topic:"Progressive Web Apps: The Long Game",
+    subtopic:'progressive-web-apps-long-game',
+};
+let webFont = {
+    topic:"Using Web Fonts at All:Point/Counterpoint",
+    subtopic:'content-display-patterns-expressive-css',
+};
+let inputFilter = document.getElementById('searchPopularResult').value.toUpperCase();
 let relevantTopics = [webFont, webApp, ReactContainer,responsiveTable, transArticle, svgFilter, commentForm, fontFace, pixelIllustration, codeReview, contentDisplay];
-const displayReview = function(arr) {
-    arr.forEach(item => {
+//console.log(relevantTopics);
+
+// let inputFiler = document.getElementById('searchPopularResult').value.toUpperCase();
+// let rel = relevantTopics.filter(item => {
+//     if(item.topic.toLowerCase().indexOf(inputFiler) >=0){
+//         return true
+//     } else false
+// })
+
+function filterByValue(){
+    let inputFilter = document.getElementById('searchPopularResult').value.toUpperCase();
+    let rel = relevantTopics.filter(item => {
+        if(item.topic.toUpperCase().indexOf(inputFilter) >=0){
+            return true
+        } else false
+    })
+    console.log(rel);
+    relTopics.innerHTML = ''
+    rel.forEach(item => {
         const type = item.img ? `<img class="" src="${item.img}" style="width: 128px;height: 128px;">` : '';
         let html = `
             <li>
                 <div class="result-list">
                     <div class="result-list-inner">
                         <h3 class="h3">
-                            <a href="#" class="">
+                           <a href="#" class="">
                                 ${item.topic}
                             </a>
                         </h3>
@@ -100,8 +113,10 @@ const displayReview = function(arr) {
         `;
         relTopics.insertAdjacentHTML("afterbegin", html);
     });
+    relTopics.appendChild(loadMoreSection);
 };
-displayReview(relevantTopics);
+filterByValue();
+
 let loadMore = function(parameter){
     parameter.forEach(function(item){
         let html = `
@@ -124,16 +139,22 @@ let loadMore = function(parameter){
         `
         resultList.insertAdjacentHTML("afterbegin", html);
     })
+    console.log(loadMoreSection);
 }
 let loadMoreInner = [contentDisplay, contentDisplay, contentDisplay, contentDisplay, contentDisplay, contentDisplay, contentDisplay];
 loadMore(loadMoreInner);
-relTopics.insertAdjacentHTML("beforeend", loadMoreSection);
+//relTopics.appendChild(loadMoreSection);
 let searchPopularResult = document.querySelector('#searchPopularResult');
 
-let result = loadMoreInner
-.map(item => {return item.topic})
-.filter(item => item.includes('c'));
-console.log(result);
+
+
+
+
+
+
+
+
+//console.log(result);
 let subPost = document.querySelector('.sub-post');
 let subTag = document.querySelector('.sub-tags');
 let subCategory = document.querySelector('.sub-categories');
@@ -253,10 +274,13 @@ function subTags(arr, arr1, arr2, arr3){
 };
 subTags(tags, posts, categories, years);
 
-
-let viewMore = 'WATCH THE SCREENCASTS'
+let viewMore = {
+    viewFullPage: 'WATCH THE SCREENCASTS'
+}
+//let viewMore = 'WATCH THE SCREENCASTS'
 //Landing Page
-let mailPoet = {
+//Just for practice first
+const mailPoet = {
     img: 'asset/images/svg/images/paid-subscription-newsletter-thumbnail.png',
     alt: 'Thumbnail for #211: Building a Paid Subscription Newsletter with MailPoet + WooCommerce + WordPress',
     title: '#211 Building a Paid Subscription Newsletter with MailPoet + WooCommerce + WordPress',
@@ -271,9 +295,9 @@ let mailPoet = {
         WooCommerce Subscriptions, making it a very
         cost-friendly …
     `,
-    viewMore: `${viewMore}`
+    viewMore: `${viewMore.viewFullPage}`
 };
-let astro = {
+const astro = {
     img: 'asset/images/svg/images/astro-thumbnail.png',
     alt: 'Thumbnail for #210: Yapping About Astro',
     title: '#210 Yapping About Astro',
@@ -284,10 +308,10 @@ let astro = {
         Should we call it a framework? We’ll get into that in the video. How can 
         we call it a framework if it asks you to “bring your …
     `,
-    viewMore: `${viewMore}`
+    viewMore: `${viewMore.viewFullPage}`
 };
-let netflixClone = {
-    img: 'asset/images/svg/images/astro-thumbnail.png',
+const netflixClone = {
+    img: 'asset/images/svg/images/netflix-thumbnail.png',
     alt: 'Thumbnail for #209: A Netflix Clone with DataStax Astra and Netlify',
     title: '#209 A Netflix Clone with DataStax Astra and Netlify',
     date: 'Aug 6, 2021',
@@ -298,9 +322,9 @@ let netflixClone = {
         who has <a href="#">a video </a>you should watch as well) that does a good job
         of showcasing how …
     `,
-    viewMore: `${viewMore}`
+    viewMore: `${viewMore.viewFullPage}`
 };
-let gridLayout = {
+const gridLayout = {
     img: 'asset/images/svg/images/layout-thumbnail.png',
     alt: 'Thumbnail for #208: A CSS Grid Layout with Pictures Down One Side Matched Up with Paragraphs on the Other',
     title: '#208 A CSS Grid Layout with Pictures Down One Side Matched Up with Paragraphs on the Other',
@@ -311,9 +335,9 @@ let gridLayout = {
         How do you make a layout with pictures down one side of a page matched 
         up with paragraphs on the other side?It’s a satisfying answer because …
     `,
-    viewMore: `${viewMore}`
+    viewMore: `${viewMore.viewFullPage}`
 };
-let WebPageTest = {
+const WebPageTest = {
     img: 'asset/images/svg/images/webpage-test.png',
     alt: 'Thumbnail for #207: Performance Testing CSS-Tricks with WebPageTest',
     title: '#207 Performance Testing CSS-Tricks with WebPageTest',
@@ -325,9 +349,9 @@ let WebPageTest = {
         is a real performance guru who knows WebPageTest in and out. I’m all about 
         <span>getting a little free consulting</span> helping y’all …
     `,
-    viewMore: `${viewMore}`
+    viewMore: `${viewMore.viewFullPage}`
 };
-let nextJS = {
+const nextJS = {
     img: 'asset/images/svg/images/app-platform-thumbnail.png',
     alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
     title: '#206 Building a Data-Backed Next.js Site with Prisma & App Platform',
@@ -339,9 +363,9 @@ let nextJS = {
         to build a little website. The site will be blog-like:
         posts with IDs, titles, content, and the more dynamic …
     `,
-    viewMore: `${viewMore}`
+    viewMore: `${viewMore.viewFullPage}`
 };
-let stickyPositioning = {
+const stickyPositioning = {
     img: 'asset/images/svg/images/thumb-sticky.png',
     alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
     title: '#205 Sticky Positioning',
@@ -353,9 +377,9 @@ let stickyPositioning = {
         and it will “stick” in that position when the threshold is passed,
         as long as there is room …
     `,
-   viewMore: `${viewMore}`
+   viewMore: `${viewMore.viewFullPage}`
 };
-let devTool = {
+const devTool = {
     img: 'asset/images/svg/images/axe-thumbnail.png',
     alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
     title: '#204 Using the axe DevTools Web Accessibility Testing Browser Plugin',
@@ -367,9 +391,9 @@ let devTool = {
         Short story: this is an <i>amazing plugin</i> that helps you quickly find 
         accessibility problems on any website, <i>then helps …</i>
     `,
-    viewMore: `${viewMore}`
+    viewMore: `${viewMore.viewFullPage}`
 };
-let CloudFlare = {
+const CloudFlare = {
     img: 'asset/images/svg/images/site-thumbnail.png',
     alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
     title: '#203 A First Look at Cloudflare Pages',
@@ -382,9 +406,9 @@ let CloudFlare = {
         You might normally think of Cloudflare as something you 
         put in front of your site’s …
     `,
-   viewMore: `${viewMore}`
+   viewMore: `${viewMore.viewFullPage}`
 };
-let listMaker = {
+const listMaker = {
     img: 'asset/images/svg/images/centered-list-markers-thumbnail.png',
     alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
     title: '#202 Centered List Markers',
@@ -396,9 +420,9 @@ let listMaker = {
         A reader wrote in with a screenshot of what they were trying
         to accomplish — basically an …
     `,
-    viewMore: `${viewMore}`
+    viewMore: `${viewMore.viewFullPage}`
 };
-let booping = {
+const booping = {
     img: 'asset/images/svg/images/boop-thumbnail.png',
     alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
     title: '#201 Doing Booping',
@@ -410,9 +434,9 @@ let booping = {
         except that they aren’t. Your thingies — things like links, buttons, 
         etc. — should still have those states. A “boop” is a more …
     `,
-    viewMore: `${viewMore}`
+    viewMore: `${viewMore.viewFullPage}`
 };
-let zoomSrolling = {
+const zoomSrolling = {
     img: 'asset/images/svg/images/scroll-to-zoom-thumbnail.png',
     alt: 'Thumbnail for #206: Building a Data-Backed Next.js Site with Prisma &amp; App Platform',
     title: '#200 Scroll to Zoom',
@@ -424,7 +448,7 @@ let zoomSrolling = {
         little SVG warping tool</a> that had a feature where
         my mouse scroll wheel (or trackpad) could be used to zoom the …
     `,
-    viewMore: `${viewMore}`
+    viewMore: `${viewMore.viewFullPage}`
 };
 let jsx = {
     img: 'asset/images/svg/images/jsx-thumbnail.png',
@@ -438,71 +462,38 @@ let jsx = {
         JSX to use. Yep, JSX really only has one primary transformation
         that it does. It turns angle brackets …
     `,
-    viewMore: `${viewMore}`
+    viewMore: `${viewMore.viewFullPage}`
 };
+const articleGrid = document.querySelector('.article-grid');
+const screencast = [mailPoet, astro, netflixClone, gridLayout, WebPageTest, nextJS, stickyPositioning, devTool, CloudFlare, listMaker, booping, zoomSrolling, jsx];
 
-let articleGrid = document.querySelector('.article-grid');
-let screencast = [mailPoet, astro, netflixClone, gridLayout, WebPageTest, nextJS, stickyPositioning, devTool, CloudFlare, listMaker, booping, zoomSrolling, jsx];
-// for (let getArt of getArticle){
-//     getArt.setAttribute('class', 'article')
-//     console.log(getArt);
-// };
-//console.log(getArticle);
-function screenCast(arr){
-    articleGrid.innerHTML = ''
-    arr.forEach(function(item){
-        let html = `
-            <article>
-                <a>
-                    <img width="1280" height="780" class="video-thumbnail" src="${item.img}" alt="${item.alt}">
-                </a>
-                <div>
-                    <h2>
-                        <a>${item.title}</a>
-                    </h2>
-                    <div class="guide-time">
-                        <p>${item.date}</p>
-                        <p>${item.time}</p>
-                    </div>
-                    <div class="">
-                        <p>
-                        ${item.paragraph}
-                        </p>
-                    </div>
-                    <a>
-                    ${item.viewMore}
-                    </a>
-                </div>
-            </article>
-        `
-        articleGrid.insertAdjacentHTML("beforeend", html);
-    })
-};
-screenCast(screencast);
-const getArticle = document.getElementsByTagName('article');
-console.log(getArticle);
-for (let getArt of getArticle){
-    //Anchor Tag(First child )
-    console.log(getArt);
-    getArt.getElementsByTagName('a')[0].className = 'links';
-    getArt.firstElementChild.href = '';
-    //Last Element, Div Tag
-    getArt.lastElementChild.className = 'video-info';
-    getArt.lastElementChild.href = '';
-    //H2 > A Class Name
-    getArt.lastElementChild.firstElementChild.firstElementChild.className = 'links';
-    getArt.lastElementChild.firstElementChild.firstElementChild.href = '#';
-    getArt.lastElementChild.href = '';
-    //guide-time
-    getArt.lastElementChild.children[1].className = 'guide-time';
-    //guide-excerpt
-    getArt.lastElementChild.children[2].className = 'guide-excerpt';
-    //Video Info > button (last element);
-    getArt.lastElementChild.lastElementChild.className = 'button links';
-    getArt.lastElementChild.lastElementChild.href = '';
-};
-let videoCards = document.querySelector('.video-card-container');
-let aboutSvg = {
+
+screencast.forEach(function(item){
+    const htmL = document.createElement('article');
+    const anchorTag = htmL.appendChild(document.createElement('a'));
+    anchorTag.className = 'links';
+    const img = anchorTag.appendChild(document.createElement('img'));
+    img.src = `${item.img}`;
+    img.width = 1280;
+    img.height = 780;
+    img.alt = `${item.alt}`
+    let anchorTagNextSibling = htmL.appendChild(document.createElement('div'));
+    anchorTagNextSibling.className = 'video-info';
+    anchorTagNextSibling.appendChild(document.createElement('h2')).innerHTML = `${item.title}`;
+    const guideTime = anchorTagNextSibling.appendChild(document.createElement('div'));
+    guideTime.className = 'guide-time'
+    guideTime.appendChild(document.createElement('p')).innerHTML = `${item.date}`;
+    guideTime.appendChild(document.createElement('p')).innerHTML = `${item.time}`;
+    const guideExerpt = anchorTagNextSibling.appendChild(document.createElement('div'));
+    guideExerpt.className = 'guide-excerpt'
+    guideExerpt.appendChild(document.createElement('p')).innerHTML = `${item.paragraph}`;
+    const viewMoreButton = anchorTagNextSibling.appendChild(document.createElement('a'));
+    viewMoreButton.className = 'links button'
+    viewMoreButton.appendChild(document.createElement('p')).innerHTML = `${item.viewMore}`;
+    articleGrid.append(htmL)
+});
+const videoCards = document.querySelector('.video-card-container');
+const aboutSvg = {
     img: 'asset/images/svg/images/svg-fallback-guide.png',
     videoCourse: 'Video Course (2015)',
     topics: 'Everything You Need To Know About SVG',
@@ -516,7 +507,7 @@ let aboutSvg = {
     like animating it.`,
     linkToCourse: 'GO TO COURSE →'
 };
-let jQuery = {
+const jQuery = {
     img: 'asset/images/svg/images/guide-jquery-thumbnail.png',
     videoCourse: 'Video Course (2013)',
     topics: 'Learn jQuery from Scratch',
@@ -526,7 +517,7 @@ let jQuery = {
     `,
     linkToCourse: 'GO TO COURSE →'
 };
-let v10 = {
+const v10 = {
     img: 'asset/images/svg/images/redisign-thumbnail.png',
     videoCourse: 'Video Course (2010)',
     topics: 'The Big v10 Redesign Project',
@@ -536,7 +527,7 @@ let v10 = {
     `,
     linkToCourse: 'GO TO COURSE →'
 };
-let wordPressWebsite = {
+const wordPressWebsite = {
     img: 'asset/images/svg/images/artist-website-thumbnail.png',
     videoCourse: 'Video Course (2015)',
     topics: 'Building a Mobile-First WordPress-Powered Artists Website',
@@ -546,7 +537,7 @@ let wordPressWebsite = {
     `,
     linkToCourse: 'GO TO COURSE →'
 };
-let videoCourses = [aboutSvg, jQuery, v10, wordPressWebsite];
+const videoCourses = [aboutSvg, jQuery, v10, wordPressWebsite];
 function videoCardContainer(arr){
     videoCards.innerHTML = '';
     arr.forEach(function(item){
