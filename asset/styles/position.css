@@ -204,4 +204,7 @@ main .comment-section p a {
   .page-wrap-inner .note {
     padding: calc(1rem + 8px) 1rem 1rem;
   }
+  /* .page-wrap-inner .note{
+        padding: calc(1rem + 8px) 1rem 1rem;
+    } */
 }
